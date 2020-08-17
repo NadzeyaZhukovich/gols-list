@@ -16,10 +16,12 @@ export default new Vuex.Store({
     mutations: {
         SET_GOALS(state, goals) {
             state.goals = goals;
-            // state.goals.push(goals);
         },
         ADD_CATEGORY(state, category) {
             state.categories.push(category);
+        },
+        ADD_GOAL(state, goal) {
+            state.goals.push(goal);
         }
     },
     actions: {
@@ -34,6 +36,11 @@ export default new Vuex.Store({
         },
         addCategory({ commit }, category) {
             commit('ADD_CATEGORY', category);
+        },
+        createGoal({ commit }, goal) {
+            return GoalService.postGoals(goal).then(() => {
+                commit('ADD_GOAL', goal);
+            })
         }
     },
     getters: {}

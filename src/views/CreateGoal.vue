@@ -8,26 +8,27 @@
         </div>
         <div class="field">
             <label>Category</label>
-            <select v-model="goals.title">
+            <select v-model="goal.title">
                 <option v-for="cat in categories" :key="cat"> {{cat}} </option>
             </select>
         </div>
         <div class="field">
             <label>Title</label>
-            <input v-model="subGoal.title" type="text" placeholder="Add an goal title"/>
+            <input v-model="goal.subGoal.title" type="text" placeholder="Add an goal title"/>
         </div>
         <div class="field">
             <label>Descriptions</label>
-            <input v-model="subGoal.description" type="text" placeholder="Add an goal title"/>
+            <input v-model="goal.subGoal.description" type="text" placeholder="Add an goal title"/>
         </div>
-        <div class="field">
-            <label>Date</label>
-            <datepicker v-model="goals.startDate" placeholder="Select a start date"/>
-        </div>
-        <div class="field">
-            <label>Date</label>
-            <datepicker v-model="goals.endDate" placeholder="Select a end date"/>
-        </div>
+<!--        <div class="field">-->
+<!--            <label>Date</label>-->
+<!--            <datepicker v-model="goals.startDate" placeholder="Select a start date"/>-->
+<!--        </div>-->
+<!--        <div class="field">-->
+<!--            <label>Date</label>-->
+<!--            <datepicker v-model="goals.endDate" placeholder="Select a end date"/>-->
+<!--        </div>-->
+        <button class="field" @click="createGoal">creat</button>
     </div>
 </template>
 
@@ -40,14 +41,23 @@
         },
         data() {
             return {
-                goals: this.createGoalObject(),
-                subGoal: this.createSubGoalObject(),
+                goal: this.createGoalObject(),
                 newCategory: '',
                 categories: this.$store.state.categories,
-
             }
         },
         methods: {
+            createGoal() {
+                console.log('result => ', this.goal);
+                this.$store
+                    .dispatch('createGoal', this.goal)
+                    // .then(() => {
+                    //   this.goal = this.createGoalObject()
+                    // })
+                    // .catch(() => {
+                    //   console.log('Goul can not be created')
+                    // })
+            },
             addNewCategory() {
                 if(this.newCategory.length) {
                     this.$store
@@ -78,6 +88,21 @@
 <style scoped>
     .field {
         margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    input,
+    select {
+      margin: 10px 0;
+      width: 200px;
+      height: 40px;
+    }
+
+    button {
+      padding: 10px;
+      min-width: 70px;
     }
 </style>
 

@@ -1,8 +1,14 @@
 <template>
     <section class="goals">
         <div class="goal__item" v-for="goal in goals" :key="goal.id">
-            <p>{{goal.title}}</p>
-            <p>Numbers of tasks: {{goal.subGoal.length}}</p>
+            <p class="goal-category">{{goal.title}}</p>
+<!--            <p>Numbers of tasks: {{goal.subGoal.length}}</p>-->
+
+          <div v-for="sub in goal.subGoal" :key="sub.title">
+            <p class="sub-title"> {{sub.title}}: </p>
+            <p class="sub-description"> {{sub.description}} </p>
+          </div>
+
         </div>
     </section>
 </template>
@@ -36,6 +42,23 @@
             transform: scale(1.01);
             box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2), 0 1px 15px 0 rgba(0, 0, 0, 0.19);
         }
+    }
+
+    .goal-category {
+      text-transform: uppercase;
+      font-weight: bold;
+      color: red;
+
+    }
+
+    .sub-title {
+      color: green;
+      text-transform: capitalize;
+      text-align: left;
+    }
+
+    .sub-description {
+      text-align: left;
     }
 
 </style>

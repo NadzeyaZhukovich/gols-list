@@ -8,21 +8,15 @@
       "subGoal": [
         {
           "title": "clean",
-          "description": "Clean home",
-          "startDate": "Aug 28 2018",
-          "endDate": "Aug 28 2018"
+          "description": "Clean home"
         },
         {
           "title": "meal",
-          "description": "Clean home",
-          "startDate": "Aug 28 2018",
-          "endDate": "Aug 28 2018"
+          "description": "Clean home"
         },
         {
           "title": "shopping",
-          "description": "Clean home",
-          "startDate": "Aug 28 2018",
-          "endDate": "Aug 28 2018"
+          "description": "Clean home"
         }
       ]
     },
@@ -34,21 +28,15 @@
       "subGoal": [
         {
           "title": "drow",
-          "description": "Clean home",
-          "startDate": "Aug 28 2018",
-          "endDate": "Aug 28 2018"
+          "description": "Clean home"
         },
         {
           "title": "playing the guitars",
-          "description": "Play",
-          "startDate": "Aug 28 2018",
-          "endDate": "Aug 28 2018"
+          "description": "Play"
         },
         {
           "title": "Photo",
-          "description": "To do 10 photos",
-          "startDate": "Aug 28 2018",
-          "endDate": "Aug 28 2018"
+          "description": "To do 10 photos"
         }
       ]
     },
@@ -60,23 +48,23 @@
       "subGoal": [
         {
           "title": "Course",
-          "description": "See course VueJs",
-          "startDate": "Aug 28 2018",
-          "endDate": "Aug 28 2018"
+          "description": "See course VueJs"
         },
         {
           "title": "playing the guitars",
-          "description": "Play",
-          "startDate": "Aug 28 2018",
-          "endDate": "Aug 28 2018"
+          "description": "Play"
         },
         {
           "title": "Photo",
-          "description": "To do 10 photos",
-          "startDate": "Aug 28 2018",
-          "endDate": "Aug 28 2018"
+          "description": "To do 10 photos"
         }
       ]
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
     }
   ]
 }

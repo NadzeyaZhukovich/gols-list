@@ -12,5 +12,8 @@ const apiClient = axios.create({
 export default {
     getGoals() {
         return apiClient.get('/goals');
+    },
+    postGoals() {
+        return apiClient.post('/goals');
     }
 }
