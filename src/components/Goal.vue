@@ -1,27 +1,24 @@
 <template>
     <section class="goals">
-        <div class="goal__item">
-            <p>Work</p>
-            <p>Goals: 2</p>
-        </div>
-        <div class="goal__item">
-            <p>Hobby</p>
-            <p>Goals: 5</p>
-        </div>
-        <div class="goal__item">
-            <p>Home</p>
-            <p>Goals: 6</p>
-        </div>
-        <div class="goal__item">
-            <p>Sport</p>
-            <p>Goals: 7</p>
+        <div class="goal__item" v-for="goal in goals" :key="goal.id">
+            <p>{{goal.title}}</p>
+            <p>Numbers of tasks: {{goal.subGoal.length}}</p>
         </div>
     </section>
 </template>
 
 <script>
+    import {mapState} from "vuex";
+
     export default {
-        name: 'Goal'
+        name: 'Goal',
+        created() {
+            this.$store.dispatch('fetchGoals');
+            console.log('fetchData => ', this.$store.dispatch('fetchGoals'))
+        },
+        computed: {
+            ...mapState(['goals'])
+        }
     }
 </script>
 
