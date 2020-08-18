@@ -13,7 +13,7 @@ export default {
     getGoals() {
         return apiClient.get('/goals');
     },
-    postGoals() {
-        return apiClient.post('/goals');
+    postGoals(goal) {
+        return apiClient.post('/goals', goal);
     }
 }

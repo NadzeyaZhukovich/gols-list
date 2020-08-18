@@ -14,11 +14,11 @@
         </div>
         <div class="field">
             <label>Title</label>
-            <input v-model="goal.subGoal.title" type="text" placeholder="Add an goal title"/>
+            <input v-model="goal.subGoal[0].title" type="text" placeholder="Add an goal title"/>
         </div>
         <div class="field">
             <label>Descriptions</label>
-            <input v-model="goal.subGoal.description" type="text" placeholder="Add an goal title"/>
+            <input v-model="goal.subGoal[0].description" type="text" placeholder="Add an goal title"/>
         </div>
 <!--        <div class="field">-->
 <!--            <label>Date</label>-->
@@ -51,12 +51,12 @@
                 console.log('result => ', this.goal);
                 this.$store
                     .dispatch('createGoal', this.goal)
-                    // .then(() => {
-                    //   this.goal = this.createGoalObject()
-                    // })
-                    // .catch(() => {
-                    //   console.log('Goul can not be created')
-                    // })
+                    .then(() => {
+                      this.goal = this.createGoalObject()
+                    })
+                    .catch(() => {
+                      console.log('Goul can not be created')
+                    })
             },
             addNewCategory() {
                 if(this.newCategory.length) {
@@ -76,10 +76,11 @@
                 }
             },
             createSubGoalObject() {
-                return {
-                    title: '',
-                    description: ''
-                }
+                return [
+                    { title: '',
+                      description: ''
+                    }
+                ]
             }
         }
     }
